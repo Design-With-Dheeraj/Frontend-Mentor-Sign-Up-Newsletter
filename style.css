@@ -1,0 +1,343 @@
+*
+{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+:root
+{
+    --page-Bg-Color: #36384D;
+    --card-Bg-Color: #ffffff;
+
+    --gradient-first-color: rgb(255, 98, 81);
+    --gradient-second-color: rgb(255,105,62);
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(assets/fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(assets/fonts/Roboto-Regular.ttf);
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--page-Bg-Color);
+}
+
+.wrapper
+{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.wrapper .form-contain
+{
+    width: 650px;
+    height: auto;
+
+    background-color: var(--card-Bg-Color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.form-content-side
+{
+    padding: 0 30px;
+}
+
+.form-content-side .form-content-head
+{
+    font: 32px "roboto-bold";
+}
+
+.form-content-side .form-content-info
+{
+    font: 13px "roboto-regular";
+    margin: 16px 0;
+}
+
+.form-content-side .form-content-list
+{
+    list-style: none;
+}
+
+.form-content-list li
+{
+    display: flex;
+    align-items: center;
+
+    margin: 12px 0;
+}
+
+.form-content-list li img
+{
+    width: 16px;
+    height: auto;
+}
+
+.form-content-list li p
+{
+    margin-left: 10px;
+    font: 13px "roboto-regular";
+}
+
+.form-content-side form
+{
+    margin-top: 20px;
+}
+
+form .input-label
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font: 11px "roboto-bold";
+}
+
+form .input-label span
+{
+    color: red;
+}
+
+form input
+{
+    margin: 6px 0 14px;
+    padding: 10px 14px;
+    width: 100%;
+    
+    outline: none;
+    border-radius: 6px;
+    border: 1.5px solid rgb(200, 200, 200);
+    background: var(--card-Bg-Color);
+    font: 12px "roboto-bold";
+}
+
+form input:focus
+{
+    border: 1px solid rgb(69, 69, 69);
+}
+
+.formBtn
+{
+    width: 100%;
+    padding: 10px 0;
+    
+    border-radius: 6px;
+    border: none;
+
+    font: 12px "roboto-bold";
+    color: var(--card-Bg-Color);
+    background: linear-gradient(45deg, #36384D 10%, #36384D 90%);
+
+    transition: 0.2s;
+}
+
+.formBtn:hover
+{
+    background: linear-gradient(45deg, rgb(255, 98, 81) 10%, rgb(255,105,62) 90%);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(255, 130, 116);
+}
+
+.form-contain .form-img-side img
+{
+    width: 220px;
+    height: auto;
+}
+
+.form-contain .form-img-side .desktop-img
+{
+    display: block;
+}
+
+.form-contain .form-img-side .mobile-img
+{
+    display: none;
+}
+
+
+/* --- Success Message Card Code Start --- */
+
+.success-card
+{
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(0.1);
+
+    width: 320px;
+    height: auto;
+
+    background-color: var(--card-Bg-Color);
+    padding: 30px;
+
+    border-radius: 12px;
+    display: block;
+
+    transition: 0.5s, opacity 300ms ease-in-out;
+}
+
+.showSuccess-card
+{
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.success-card .success-img img
+{
+    width: 40px;
+    height: auto;
+}
+
+.success-card .success-head
+{
+    font: 32px "roboto-bold";
+    line-height: 30px;
+    
+    margin: 20px 0;
+}
+
+.success-card .success-para
+{
+    font: 13px "roboto-regular";
+}
+
+.success-para span
+{
+    font-family: "roboto-bold";
+}
+
+.success-card .formBtn
+{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+.attribution
+{
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    text-align: center;
+
+    font: 13px "roboto-bold";
+    color: var(--card-Bg-Color);
+    letter-spacing: .5px;
+}
+
+.attribution a
+{
+    color: var(--gradient-second-color);
+}
+
+
+
+@media screen and (max-width: 768px)
+{
+    .wrapper
+    {
+        padding: 20px 20px 40px;
+        height: auto;
+    }
+
+    .wrapper .form-contain
+    {
+        width: 400px;
+        height: auto;
+
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+        padding: 0px 0 30px;
+
+        /* display: none; */
+        flex-direction: column-reverse;
+    }
+
+    .form-content-side
+    {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    .form-contain .form-img-side
+    {
+        width: 100%;
+    }
+
+    .form-contain .form-img-side img
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-contain .form-img-side .desktop-img
+    {
+        display: none;
+    }
+
+    .form-contain .form-img-side .mobile-img
+    {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px)
+{
+    .wrapper
+    {
+        padding: 0px;
+        height: auto;
+    }
+
+    .wrapper .form-contain
+    {
+        width: 100%;
+        height: auto;
+
+        border-radius: 0;
+        overflow: hidden;
+        padding: 0px 0 60px;
+
+        flex-direction: column-reverse;
+    }
+
+    .attribution
+    {
+        color: var(--page-Bg-Color);
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 360px)
+{
+    .success-card
+    {
+        width: 90%;
+        padding: 30px;
+    }
+}
